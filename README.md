@@ -203,22 +203,22 @@ Pull up the Pandas `groupby` documentation.
 We'll look at play count grouped by artist.
 
 # Even More Pandas (190)
-Let's look at this crunchbase data.
+Let's look at [this dataset](https://raw.githubusercontent.com/suneel0101/lesson-plan/master/crunchbase_monthly_export.csv) from Crunchbase
 
 ## Preliminary Exercises
-1. Read in the data.
-2. Anything interesting/strange about the column names?
-3. Let's rename the column names accordingly.
+1. Solo: Read in the data. What is this data about? What are some questions you want to answer about the data?
+2. Partner: Anything interesting/strange about the column names?
+3. Class altogether: Let's rename the column names accordingly.
 
-## Using `.describe()` to get some descriptive statistics (200)
+## Using `.describe()` to get some descriptive statistics
 Pull up the pandas DataFrame `describe` documentation.
 
-## Using `.query()`
+## Using `.query()` (200)
 We can use boolean expressions to query the data.
 
 Here are some examples:
 
-### Exercises (210)
+## Exercises (210)
 1.
 2.
 3.
@@ -227,9 +227,9 @@ Here are some examples:
 6.
 
 # Next Steps
-- pandas tutorials
--
-
+To continue your Python/Pandas/Data Science education, recommend the following:
+- [pandas tutorials](http://pandas.pydata.org/pandas-docs/stable/tutorials.html)
+- [GA's part-time data science course](https://generalassemb.ly/education/data-science)
 
 # Sources
 - http://pbpython.com/pandas-pivot-table-explained.html
