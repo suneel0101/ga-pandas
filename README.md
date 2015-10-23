@@ -8,14 +8,12 @@ Students will be able to use `pandas` to
 - apply advanced pandas techniques such as grouping, aggregation and pivot tables
 
 
-
 # Agenda
 0. Set up programming environment
 1. Python Warm Up
-2. Review of Basic Python
-3. Using Other Libraries
-4. Intro to Pandas
-5. Wrap up & Closing thoughts
+2. Using Documentation
+3. Go Deep into Pandas
+4. Wrap Up & Next Steps
 
 # Set Up Programming Environment (10)
 ## Download and Installation
