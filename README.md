@@ -128,6 +128,10 @@ Then, read in the csv file from the above URL.
 Let's learn how to filter the data according to some criterion.
 - How many accounts have been won?
 
+```python
+>>> df[df["Status"] == "won"]
+```
+
 Exercise:
 - Solo: How many accounts have a price greater than $12,000?
 - Solo: just the subset of data where status is pending
@@ -153,6 +157,12 @@ Step:
 Pivot tables are a great tool to summarize the dataset. Same concept as in Excel. Let's try it out
 
 First, let's take a look at the documentation [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.pivot_table.html).
+
+Also let's look at the documentation within iPython notebook
+
+```python
+>>> pd.pivot_table?
+```
 
 ```python
 >>> pd.pivot_table(df, index=["Name"])
@@ -187,7 +197,12 @@ Download [this dataset](https://s3-us-west-2.amazonaws.com/ga-dat-2015-suneel/ro
 Let's create a new column that contains the clean year
 
 ### lambda functions (150)
-Sometimes the data manipulation we'll want to do on a column will be pretty simple, so we can apply it in place. Say for example we wanted to lowercase an entire column (code in the iPython notebook)
+Sometimes the data manipulation we'll want to do on a column will be pretty simple, so we can apply it in place. Say for example we wanted to lowercase an entire column
+
+```python
+>>> df["lowercase_title"] = df["Song Clean"].apply(lambda val: val.lower())
+```
+
 
 #### lambda function exercises
 1. Create a new column called "contains_Rock" and the value should be True if the title contains the word "Rock" and False otherwise
@@ -197,9 +212,17 @@ Sometimes the data manipulation we'll want to do on a column will be pretty simp
 Pull up the pandas value_counts documentation.
 We'll answer the following: What are the top 20 songs by play count?
 
+```python
+>>> df["ARTIST CLEAN"].value_counts()[:20]
+```
+
 ## Using `groupby` (180)
 Pull up the Pandas `groupby` documentation.
 We'll look at play count grouped by artist.
+
+```python
+>>> df.groupby("ARTIST CLEAN")["PlayCount"].mean()
+```
 
 # Even More Pandas (190)
 Let's look at [this dataset](https://raw.githubusercontent.com/suneel0101/lesson-plan/master/crunchbase_monthly_export.csv) from Crunchbase
@@ -212,19 +235,12 @@ Let's look at [this dataset](https://raw.githubusercontent.com/suneel0101/lesson
 ## Using `.describe()` to get some descriptive statistics
 Pull up the pandas DataFrame `describe` documentation.
 
-## Using `.query()` (200)
-We can use boolean expressions to query the data.
+## Exercises (200)
 
-Here are some examples:
-
-## Exercises (210)
-
-1.
-2.
-3.
-4.
-5.
-6.
+1. Construct a pivot table that indexes on region and shows the total funding amounts by region
+2. What is the average number of funding rounds for companies in NYC? How does that compare to SF?
+3. What are the top 3 markets with the highest average funding total per company?
+4. What is the most popular category of  company?
 
 # Next Steps
 To continue your Python/Pandas/Data Science education, recommend the following:
