@@ -1,9 +1,13 @@
 # Objectives
-Students will be able to use pandas to
+The primary goal is to get the students comfortable enough with `pandas` to apply it to their data processing and analysis tasks.
+
+Students will be able to use `pandas` to
 - perform data analysis
 - read in CSV data
 - perform data munging and cleaning on dirty data
 - apply advanced pandas techniques such as grouping, aggregation and pivot tables
+
+
 
 # Agenda
 0. Set up programming environment
@@ -219,6 +223,7 @@ We can use boolean expressions to query the data.
 Here are some examples:
 
 ## Exercises (210)
+
 1.
 2.
 3.
