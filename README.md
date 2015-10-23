@@ -34,7 +34,7 @@ Run the following code in iPython notebook by typing it into a cell and pressing
 print "Hello"
 ```
 
-# An Exercise in Documentation (20)
+# Warming Up to Documentation (20)
 What is a library? A reusable, collection of code that someone else (or you) has already written. Some great built-in libraries:
 - `random`
 - `csv`
@@ -59,21 +59,18 @@ Let's import the library
 
 How does python know what `random` is and how to find the code? Because it comes built-in to the Python language. Other libraries such as `pandas` will have to be installed prior to use.
 
-### Exercise 1
-Find the `randint` function in the documentation and explain to your neighbor what it does and how to use it.
-
-### Exercise 2
-Again, with your partner, use the `randint` function to generate a random number between 1 and 125.
-
-### Exercise 3
-This time solo, use the `shuffle` function on this list: `[1, 2, 7, 5, 9, 10]`. What gets returned?
+### Exercises
+1. Find the `randint` function in the documentation and explain to your neighbor what it does and how to use it.
+2. Again, with your partner, use the `randint` function to generate a random number between 1 and 125.
 
 ## What is `as`?
+
+Let's see what happens:
 ```python
 >>> import random as rd
+>>> random.randint
+>>> rd.randint
 ```
-
-Let's see what happens...
 
 # Intro to Pandas (45)
 What is [pandas](http://pandas.pydata.org/pandas-docs/stable/)?
