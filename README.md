@@ -148,10 +148,10 @@ Exercise:
 #### Aggregating (90)
 - What is the total dollar amount pending?
 
-Step:
+Steps:
 1. add a column called Amount that is Quantity times Price
 2. select the subtable where status is pending
-2. sum up the filtered amounts in that subtable
+3. sum up the filtered amounts in that subtable
 
 #### Pivot table basics (105)
 Pivot tables are a great tool to summarize the dataset. Same concept as in Excel. Let's try it out
