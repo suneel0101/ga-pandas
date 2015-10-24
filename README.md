@@ -244,6 +244,12 @@ Pull up the pandas DataFrame `describe` documentation.
 4. How many companies have Games as a category? What's their average funding total? Using a pivot table, what's the average funding total of those companies that have Games as a category, broken down by Region?
 5. What is the most popular category of company?
 
+# Sharing Our Analysis
+1. Download the iPython notebook
+2. Paste it into a [GitHub gist](http://gist.github.com)
+3. Copy the URL of the gist and paste it [here](http://nbviewer.ipython.org)
+4. Voilà, now you have a shareable analysis!
+
 # Next Steps
 To continue your Python/Pandas/Data Science education, recommend the following:
 - [pandas tutorials](http://pandas.pydata.org/pandas-docs/stable/tutorials.html)
