@@ -240,7 +240,8 @@ Pull up the pandas DataFrame `describe` documentation.
 1. Construct a pivot table that indexes on region and shows the total funding amounts by region
 2. What is the average number of funding rounds for companies in NYC? How does that compare to SF?
 3. What are the top 3 markets with the highest average funding total per company?
-4. What is the most popular category of  company?
+4. How many companies have Games as a category? What's their average funding total? Using a pivot table, what's the average funding total of those companies that have Games as a category, broken down by Region?
+5. What is the most popular category of company?
 
 # Next Steps
 To continue your Python/Pandas/Data Science education, recommend the following:
