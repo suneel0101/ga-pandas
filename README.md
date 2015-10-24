@@ -229,8 +229,9 @@ Let's look at [this dataset](https://raw.githubusercontent.com/suneel0101/lesson
 
 ## Preliminary Exercises
 1. Solo: Read in the data. What is this data about? What are some questions you want to answer about the data?
-2. Partner: Anything interesting/strange about the column names?
-3. Class altogether: Let's rename the column names accordingly.
+2. What is the max funding total?
+3. Partner: Anything interesting/strange about the column names?
+4. Class altogether: Let's rename the column names accordingly.
 
 ## Using `.describe()` to get some descriptive statistics
 Pull up the pandas DataFrame `describe` documentation.
