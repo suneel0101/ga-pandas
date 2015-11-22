@@ -7,7 +7,6 @@ Students will be able to use `pandas` to
 - perform data munging and cleaning on dirty data
 - apply advanced pandas techniques such as grouping, aggregation and pivot tables
 
-
 # Agenda
 0. Set up programming environment
 1. Python Warm Up
@@ -15,22 +14,18 @@ Students will be able to use `pandas` to
 3. Go Deep into Pandas
 4. Wrap Up & Next Steps
 
-# Set Up Programming Environment (10)
-## Download and Installation
-Go through these steps on your own computer, but do so in collaboration with your neighbor.
-
-0. Download and install anaconda (before class) [here](http://continuum.io/downloads).
-1. Open Terminal
-2. Run this command to create our development environment: `conda create -n pds pandas matplotlib ipython ipython-notebook scikit-learn` (This may take a few minutes)
-3. Run this command to activate that environment: `source activate pds`
-4. Run this command to open iPython notebook: `ipython notebook`
-
-### Exercise: Getting Familiar with iPython Notebook
-Run the following code in iPython notebook by typing it into a cell and pressing either the Play button or Shift+Enter to execute.
+# Setup
+1. Go to [tmpnb.org](http://tmpnb.org).
+2. Select `New` > `Python 2` to create a Python notebook.
+3. Follow along with me:
 
 ```python
-print "Hello"
+>>> import pandas
+>>> import sklearn
+>>> import matplotlib
 ```
+
+*Note*: to execute a cell, run Shift + Enter
 
 # Warming Up to Documentation (20)
 What is a library? A reusable, collection of code that someone else (or you) has already written. Some great built-in libraries:
@@ -70,112 +65,67 @@ Let's see what happens:
 >>> rd.randint
 ```
 
-# Intro to Pandas (45)
-What is [pandas](http://pandas.pydata.org/pandas-docs/stable/)?
+# Python Warm-Up / Review (20)
+This problem will give us a review of lists, for loops and lambda functions
 
-- analyze tabular data
-- built on top of `scipy` and `numpy`, so quite fast and it's good to know some of the basics of those libraries as well since you'll likely use some function calls and have to interact with numpy arrays which are fancy, scalable lists.
-- incredibly powerful
+Given the following list,
 
-## Our First DataSet
-[Here](https://s3.amazonaws.com/python-level-2/sales-funnel.csv) is the data set.
-
-### Exercise
-With your partner, download the data and look at it in excel.
-
-Questions:
-- What is this dataset about?
-- What are some questions you might ask about the data?
-
-### Importing pandas
-```python
->>> import pandas as pd
 ```
+names = ["Michael Fassbender", "Karlie Kloss", "Taylor Swift", "Justin Bieber"]
 
-### Exercise (55)
-We want to read in the csv file. With your partner, look in the pandas documentation (or Google) to find out how to read in a csv file given a URL.
-Then, read in the csv file from the above URL.
-
-*Note*: We're going to be heavily commenting our code so that each step is super clear and we can refer back to it in the future and immediately understand what's being done.
-
-### Basic manipulation
-```python
-# We've already read in csv data and saved it to a DataFrame called df
-# Let's see the columns
->>> df.columns
-# Let's only see the first 5 rows
->>> df[:5]
-# Let's only look at Name and Status
->>> df[["Name", "Status"]]
-# Let's look at just Name
->>> df["Name"]
 ```
-### DataFrame vs DataSeries
-```python
->>> type(df)
->>> df["Name"]
-# just pass in the string "Name" in brackets
-# and we get a Series (1-dimensional)
->>> type(df["Name"])
-# instead if you pass in the list ["Name"] in the brackets
-# we get a 2-dimensional DataFrame
->>> type(df[["Name"]])
-```
+1. print out the names that contain the letter "l"
+2. turn all of the names lowercase
+3. sort the list of names alphabetically using the built-in `sorted` function (HINT: Use Google)
+4. sort the list of names by length using the built-in `sorted` function
 
-### Questions (75)
+# Pandas (65)
+*Question* What is [`pandas`](http://pandas.pydata.org/pandas-docs/stable/)?
 
-#### Filtering dataframes
-Let's learn how to filter the data according to some criterion.
-- How many accounts have been won?
+[Here](https://s3.amazonaws.com/python-level-2/sales-funnel.csv) is our first data set. Let's download it and upload it to the datasets folder within the notebook.
 
-```python
->>> df[df["Status"] == "won"]
-```
+## Preliminary Exercise
+With your partner
+0. Download and open the dataset
+1. What is this dataset about?
+2. What are some questions you might ask about the data?
 
-Exercise:
-- Solo: How many accounts have a price greater than $12,000?
-- Solo: just the subset of data where status is pending
+## Basic Manipulation (75)
+0. Let's read in the data.
+0. How do we see what columns are available?
+1. How do we look at just the head or tail of the dataset?
+2. How do we look at only a few rows?
+3. How do we only look at certain columns?
+4. How do we pull out a column and look at it as a series?
 
-#### Getting the max value (and similar quantities) (210)
-What is the maximum account price?
+## Filtering DataFrames (80)
+0. How do we look at only those rows that have Status = won
+1. Exercise: How many accounts have a price greater than $12,000?
+2. How do we get the maximum value of a certain column?
+3. Exercise: What is the minimum account price? The mean? The sum? The standard deviation?
 
-Exercise:
-- Solo: What is the minimum account price?
-- Solo: What is the mean account price?
-- Solo: What is the sum of all the prices?
+## Aggregating data (120)
+What is the total dollar amount pending?
 
+0. How do we add columns?
+1. Let's add a column called Amount that is equal to Quantity * Price
+2. Exercise: Let's select just those rows where status is pending and sum up those amounts.
 
-#### Aggregating (90)
-- What is the total dollar amount pending?
+## Pivot tables (130)
+*Question*: What are pivot tables? Why are they useful?
 
-Steps:
-1. add a column called Amount that is Quantity times Price
-2. select the subtable where status is pending
-3. sum up the filtered amounts in that subtable
+Let's take a look at the documentation [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.pivot_table.html).
 
-#### Pivot table basics (105)
-Pivot tables are a great tool to summarize the dataset. Same concept as in Excel. Let's try it out
+0. Let's pivot using one index.
+1. Let's pivot on multiple indexes
+2. Let's reverse those indexes
+3. Let's specify which values we care about
+4. Let's specify which columns we want broken down
+5. Let's specify how we want the values to be aggregated (`aggfunc`)
+6. Let's fill N/A values
+7. Let's get subtotals
 
-First, let's take a look at the documentation [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.pivot_table.html).
-
-Also let's look at the documentation within iPython notebook
-
-```python
->>> pd.pivot_table?
-```
-
-```python
->>> pd.pivot_table(df, index=["Name"])
->>> pd.pivot_table(df,index=["Manager","Rep"])
->>> pd.pivot_table(df,index=["Manager","Rep"],values=["Price"])
-# Is the price column correct?
-# import the numpy library to us the sum function
->>> import numpy as np
->>> pd.pivot_table(df,index=["Manager","Rep"],values=["Price"],aggfunc=np.sum)
-```
-Exercise:
-- With partner: create a pivot table that indexes on Manager and Status and displays only the column Price, which contains the total price of accounts for each (Manager, Status) pair.
-- Solo: create a pivot table indexing on Status and displays only the column Price summed up per status.
+(Creative) Exercise: with a partner, use pivot tables to play around with the data. What pivots do you find particularly interesting or useful for this dataset?
 
 # More Pandas (120)
 Let's expand our Pandas knowledge and practice it with another dataset.
@@ -203,7 +153,6 @@ Sometimes the data manipulation we'll want to do on a column will be pretty simp
 >>> df["lowercase_title"] = df["Song Clean"].apply(lambda val: val.lower())
 ```
 
-
 #### lambda function exercises
 1. Create a new column called "contains_Rock" and the value should be True if the title contains the word "Rock" and False otherwise
 2. Create a new column called "contains_rock" and the value should be True if the title contains "rock" regardless of case (so it could contain "Rock", "ROCK", "roCK", etc) and False otherwise
@@ -215,7 +164,6 @@ We'll answer the following: What are the top 20 songs by play count?
 ```python
 >>> df["ARTIST CLEAN"].value_counts()[:20]
 ```
-
 ## Using `groupby` (180)
 Pull up the Pandas `groupby` documentation.
 We'll look at play count grouped by artist.
@@ -254,6 +202,3 @@ Pull up the pandas DataFrame `describe` documentation.
 To continue your Python/Pandas/Data Science education, recommend the following:
 - [pandas tutorials](http://pandas.pydata.org/pandas-docs/stable/tutorials.html)
 - [GA's part-time data science course](https://generalassemb.ly/education/data-science)
-
-# Sources
-- http://pbpython.com/pandas-pivot-table-explained.html
