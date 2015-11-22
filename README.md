@@ -27,6 +27,22 @@ Students will be able to use `pandas` to
 
 *Note*: to execute a cell, run Shift + Enter
 
+
+# Python Warm-Up / Review (20)
+This problem will give us a review of lists, for loops and lambda functions
+
+Given the following list,
+
+```
+names = ["Michael Fassbender", "Karlie Kloss", "Taylor Swift", "Justin Bieber"]
+
+```
+1. print out the names that contain the letter "l"
+2. turn all of the names lowercase
+3. sort the list of names alphabetically using the built-in `sorted` function (HINT: Use Google)
+4. sort the list of names by length using the built-in `sorted` function
+
+
 # Warming Up to Documentation (20)
 What is a library? A reusable, collection of code that someone else (or you) has already written. Some great built-in libraries:
 - `random`
@@ -64,20 +80,6 @@ Let's see what happens:
 >>> random.randint
 >>> rd.randint
 ```
-
-# Python Warm-Up / Review (20)
-This problem will give us a review of lists, for loops and lambda functions
-
-Given the following list,
-
-```
-names = ["Michael Fassbender", "Karlie Kloss", "Taylor Swift", "Justin Bieber"]
-
-```
-1. print out the names that contain the letter "l"
-2. turn all of the names lowercase
-3. sort the list of names alphabetically using the built-in `sorted` function (HINT: Use Google)
-4. sort the list of names by length using the built-in `sorted` function
 
 # Pandas (65)
 *Question* What is [`pandas`](http://pandas.pydata.org/pandas-docs/stable/)?
