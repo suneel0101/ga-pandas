@@ -24,7 +24,7 @@ Students will be able to use `pandas` to
 >>> import sklearn
 >>> import matplotlib
 ```
-
+**Caveat**: Don't hard refresh otherwise you'll lose your code.
 *Note*: to execute a cell, run Shift + Enter
 
 
